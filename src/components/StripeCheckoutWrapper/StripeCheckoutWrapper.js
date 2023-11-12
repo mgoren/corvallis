@@ -7,8 +7,8 @@ import StripeCheckoutForm from 'components/StripeCheckoutForm';
 import { SANDBOX_MODE } from 'config';
 
 // ***************************************************************
-const firebaseFunctionsBaseUrlProduction = "https://us-central1-supersonic-fc15a.cloudfunctions.net";
-const firebaseFunctionsBaseUrlDevelopment = "http://localhost:5001/supersonic-fc15a/us-central1";
+// const firebaseFunctionsBaseUrlProduction = "https://us-central1-supersonic-fc15a.cloudfunctions.net";
+// const firebaseFunctionsBaseUrlDevelopment = "http://localhost:5001/supersonic-fc15a/us-central1";
 // ***************************************************************
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);

@@ -1,5 +1,5 @@
 // ***************************************************************
-const frontendSiteDomain = "https://www.supersoniccontra.com";
+// const frontendSiteDomain = "https://www.supersoniccontra.com";
 // ***************************************************************
 
 const functions = require("firebase-functions");
