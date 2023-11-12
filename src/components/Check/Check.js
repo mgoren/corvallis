@@ -20,9 +20,10 @@ export default function Check({ saveOrderToFirebase, processing, setProcessing }
             Write your name in the memo area, and mail to:
           </Typography>
           <Typography sx={{ mt: 2 }}>
-            CFS Dance Registrars<br />
-            6575 NW Mountain Laurel Pl<br />
-            Corvallis OR 97330
+            Corvallis Contra Weekend<br />
+            c/o CFS<br />
+            PO Box 1690<br />
+            Corvallis OR 97339
           </Typography>
 
           <Box sx={{ my: 3 }}>

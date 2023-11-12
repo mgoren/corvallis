@@ -29,9 +29,14 @@ function CheckReceipt({ order }) {
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        CFS Dance Registrars<br />
-        6575 NW Mountain Laurel Pl<br />
-        Corvallis OR 97330
+        Corvallis Contra Weekend<br />
+        c/o CFS<br />
+        PO Box 1690<br />
+        Corvallis OR 97339
+      </Typography>
+
+      <Typography component='p' sx={{ mt: 2 }}>
+        We will be in touch soon to confirm your acceptance into camp, once we receive your payment!
       </Typography>
 
       <SharedReceipt />
@@ -47,7 +52,7 @@ function PaypalReceipt({ order }) {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        Thank you for signing up for the 2024 Contra Corvallis Dance Weekend!<br />
+        Thank you for registering for Corvallis Contra Weekend 2024!<br />
         Your payment for ${order.total} has been successfully processed.<br />
       </Typography>
 
@@ -83,7 +88,7 @@ export function SharedReceipt() {
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Masking, vaccination, and Covid testing will be required.<br />
+        Masking will be required.<br />
         See <StyledLink to={websiteLink(COVID_POLICY_URL)}>here</StyledLink> for the full Covid policy.<br />
       </Typography>
 
