@@ -62,7 +62,7 @@ export function AdditionalPersonReceipt({ order }) {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        Thank you for registering for the . 
+        Thank you for registering for the 2024 Contra Corvallis Dance Weekend. 
       </Typography>
 
       <SharedReceipt />

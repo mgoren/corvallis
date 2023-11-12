@@ -1,22 +1,14 @@
 import { useEffect } from 'react';
-import { scrollToTop, mailtoLink } from 'utils.js';
+import { scrollToTop } from 'utils.js';
 import { Input, CheckboxInput } from '../Input';
-import { StyledPaper, Title, StyledLink } from 'components/Layout/SharedStyles';
-import { Box, Typography } from '@mui/material';
-import { EMAIL_CONTACT, HOSPITALITY_OPTIONS, SHARE_OPTIONS } from 'config';
+import { StyledPaper, Title } from 'components/Layout/SharedStyles';
+import { Box } from '@mui/material';
+import { SCHOLARSHIP_OPTIONS, VOLUNTEER_OPTIONS, SHARE_OPTIONS, YES_NO_OPTIONS } from 'config';
 
 export default function MiscInfo() {
   useEffect(() => { scrollToTop(); },[])
   return (
     <StyledPaper className='MiscInfo'>
-      <Box sx={{ mb: 6 }}>
-        <Title>Housing</Title>
-        <CheckboxInput
-          name='hospitality'
-          options={HOSPITALITY_OPTIONS}
-        />
-      </Box>
-
       <Box sx={{ mb: 6 }}>
         <Title>What information do you want in the roster?</Title>
         <CheckboxInput
@@ -26,15 +18,37 @@ export default function MiscInfo() {
       </Box>
 
       <Box sx={{ mb: 6 }}>
-        <Title>Volunteering</Title>
-        <Typography sx={{ mt: 1.5 }}>To volunteer, please contact <StyledLink to={mailtoLink(EMAIL_CONTACT)}>{EMAIL_CONTACT}</StyledLink>.</Typography>
+        <Title>Carpool</Title>
+        <CheckboxInput
+          label='Do you want your city, state, zip, and email shared for carpooling?'
+          name='carpool'
+          options={YES_NO_OPTIONS}
+        />
       </Box>
 
-      <Title>Final comments</Title>
+      <Box sx={{ mb: 6 }}>
+        <Title>Volunteering</Title>
+        <CheckboxInput
+          label='Do you want to volunteer to help out over the weekend?  Jobs might include sweeping or checking paper products stashed in the bathrooms.'
+          name='volunteer'
+          options={VOLUNTEER_OPTIONS}
+        />
+      </Box>
+
+      <Box sx={{ mb: 6 }}>
+        <Title>Scholarships (limited availability)</Title>
+        <CheckboxInput
+          label="We feel we've kept the price of camp remarkably low.  However, if you are limited financially, we have a small number of half price scholarships available for camp. If you'd like to be considered for one of these, please let us know."
+          name='scholarship'
+          options={SCHOLARSHIP_OPTIONS}
+        />
+      </Box>
+
+      <Title>Comments</Title>
       <Input
         type='textarea'
         name='comments'
-        label="Please elaborate on any of the above questions or add any additional comments about your registration. Let us know if we missed anything, or there is something else we should know."
+        label="Please tell us any special requests or information we should know regarding your registration. This might include non-dancers who want to attend camp but want a badge or other special needs, for example."
       />
     </StyledPaper>
   );

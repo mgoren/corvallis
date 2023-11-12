@@ -97,7 +97,7 @@ export default function Navbar({ toggleColorMode }) {
   const contentRegistrationOnly = (
     <>
       <ListItem sx={{ my: 2, color: 'inherit', display: 'block' }}>
-        <Typography textAlign="center">2024 Corvallis Contra Dance Weekend Registration</Typography>
+        <Typography textAlign="center">Corvallis Contra Weekend 2024 Registation</Typography>
       </ListItem>
     </>
   );

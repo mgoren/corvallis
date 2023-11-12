@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, useFormikContext } from 'formik';
 import { clamp, cache, getFirstInvalidFieldName } from 'utils';
 import ContactInfo from '../ContactInfo';
-// import MiscInfo from '../MiscInfo';
-// import PaymentInfo from '../PaymentInfo';
+import MiscInfo from '../MiscInfo';
+import PaymentInfo from '../PaymentInfo';
 import ButtonRow from 'components/ButtonRow';
 import { NUM_PAGES } from 'config';
 import { Hidden } from '@mui/material';
@@ -12,7 +12,7 @@ import { MyMobileStepper } from 'components/MyStepper';
 export default function FormContents({ admissionQuantity, setAdmissionQuantity, currentPage, setCurrentPage }) {
   const formik = useFormikContext();
   const { values } = formik;
-  // const [donate, setDonate] = useState(values.donation > 0);
+  const [donate, setDonate] = useState(values.donation > 0);
 
   useEffect(() => {
     setAdmissionQuantity(values.admissionQuantity);
@@ -51,8 +51,8 @@ export default function FormContents({ admissionQuantity, setAdmissionQuantity, 
   return(
     <Form spellCheck='false'>
       {currentPage === 1 && <ContactInfo admissionQuantity={admissionQuantity} clampValue={clampValue} />}
-      {/* {currentPage === 2 && <MiscInfo />} */}
-      {/* {currentPage === 3 && <PaymentInfo donate={donate} setDonate={setDonate} clampValue={clampValue} admissionQuantity={admissionQuantity} />} */}
+      {currentPage === 2 && <MiscInfo />}
+      {currentPage === 3 && <PaymentInfo donate={donate} setDonate={setDonate} clampValue={clampValue} admissionQuantity={admissionQuantity} />}
 
       <Hidden smDown>
         <ButtonRow

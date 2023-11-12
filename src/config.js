@@ -4,17 +4,17 @@ import * as Yup from 'yup';
 
 export const SANDBOX_MODE = true; // for testing only
 
-export const NUM_PAGES = 1;
+export const NUM_PAGES = 3;
 export const STEPS = [
   {key: 1, label: 'Contact'},
-  // {key: 2, label: 'Misc'},
-  // {key: 3, label: 'Payment'},
+  {key: 2, label: 'Misc'},
+  {key: 3, label: 'Payment'},
   {key: 'checkout', label: 'Checkout'}
 ];
 
 export const PAYMENT_METHODS = ['paypal', 'check']; // options are stripe, paypal, and/or check (first is default)
 
-export const TITLE = '2024 Corvallis Weekend Registation'
+export const TITLE = 'Corvallis Contra Weekend 2024 Registation'
 // export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Confirmation';
 export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Registration';
 export const CONFIRMATION_CHECK_TITLE = 'Corvallis Registration';
@@ -25,8 +25,8 @@ export const COVID_POLICY_URL = 'ccw.corvallisfolklore.org/ccw/faq';
 // export const WAIVER_URL = 'pcdc.fun/files/PCDC_Events_Waiver.pdf';
 // export const PAYPAL_ME_URL = 'paypal.me/PortlandBall';
 
-export const ADMISSION_COST_RANGE = [110, 110];
-export const ADMISSION_COST_DEFAULT = 110;
+export const ADMISSION_COST_RANGE = [100, 150];
+export const ADMISSION_COST_DEFAULT = 100;
 export const ADMISSION_QUANTITY_RANGE = [1, 2];
 export const DONATION_OPTION = true;
 export const DONATION_RANGE = [0, 999];
@@ -189,17 +189,21 @@ export const ORDER_DEFAULTS = {
   volunteer: [],
   hospitality: [],
   scholarship: [],
+  carpool: [],
   share: ['name', 'email', 'phone', 'location'],
   comments: '',
   workTrade: '',
 }
 
 export const VOLUNTEER_OPTIONS = [
-  { label: 'Airport pick-up/drop-off', value: 'airport' },
-  { label: 'Friday pre-ball dance', value: 'friday' },
-  { label: 'Saturday pre-workshop decorating', value: 'saturday-pre' },
-  { label: 'Saturday evening post-ball', value: 'saturday-post' },
-  { label: 'Sunday Brunch setup and/or cleanup', value: 'sunday' },
+  { label: 'Yes', value: 'yes' },
+  { label: 'No thanks', value: 'no' },
+  { label: 'Other (please explain in comments below)', value: 'other' },
+  // { label: 'Airport pick-up/drop-off', value: 'airport' },
+  // { label: 'Friday pre-ball dance', value: 'friday' },
+  // { label: 'Saturday pre-workshop decorating', value: 'saturday-pre' },
+  // { label: 'Saturday evening post-ball', value: 'saturday-post' },
+  // { label: 'Sunday Brunch setup and/or cleanup', value: 'sunday' },
 ];
 
 export const HOSPITALITY_OPTIONS = [
@@ -208,14 +212,19 @@ export const HOSPITALITY_OPTIONS = [
 ];
 
 export const SCHOLARSHIP_OPTIONS = [
-  { label: 'I am requesting a scholarship', value: 'yes' },
+  { label: 'Yes, please consider me for a scholarship', value: 'yes' },
 ];
 
 export const SHARE_OPTIONS = [
   { label: 'Include my name in the roster', value: 'name' },
   { label: 'Include my email in the roster', value: 'email' },
   { label: 'Include my phone number in the roster', value: 'phone' },
-  { label: 'Include my city and state in the roster', value: 'location' },
+  { label: 'Include my city, state, zip in the roster', value: 'location' },
+]
+
+export const YES_NO_OPTIONS = [
+  { label: 'Yes', value: 'yes' },
+  { label: 'No', value: 'no' },
 ]
 
 export const DANCES = [

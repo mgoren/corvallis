@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { scrollToTop } from 'utils';
 import { RightAlignedInput } from '../Input';
 import { ADMISSION_COST_RANGE, DONATION_OPTION, DONATION_RANGE } from "config";
-import { StyledPaper, Title } from 'components/Layout/SharedStyles';
+import { StyledPaper, Title, Paragraph } from 'components/Layout/SharedStyles';
 import { InputAdornment, Typography } from '@mui/material';
 import { useFormikContext } from 'formik';
 // import PaymentExplanation from 'components/PaymentExplanation';
@@ -31,8 +31,10 @@ export default function PaymentInfo({ donate, setDonate, clampValue, admissionQu
                   onBlur={(event) => clampValue({ event: event, range: ADMISSION_COST_RANGE})}
                   InputProps={{ startAdornment: <InputAdornment position='start'>$</InputAdornment> }}
                 />
-                <Typography>The break-even cost is $180 per dancer.</Typography>
-                <Typography>Please consider paying at least this amount if you are able.</Typography>
+                <Typography>$100 (standard fee)</Typography>
+                <Typography>$120 (a nice donation)</Typography>
+                <Typography>$150 (a generous donation)</Typography>
+                <Paragraph>If you requested a scholarship, just leave it at $100, select "pay by check" at checkout, and we will be in touch with you.</Paragraph>
               </>
             :
               <>
@@ -53,7 +55,7 @@ export default function PaymentInfo({ donate, setDonate, clampValue, admissionQu
             <Title>Additional contribution</Title>
             {!donate && 
               <RightAlignedInput
-                label="Would you like to make an additional contribution to help defray expenses and support work-trade positions?"
+                label="Would you like to make an additional contribution?"
                 name="donate"
                 buttonText="Yes"
                 onClick={() => setDonate(true)}
