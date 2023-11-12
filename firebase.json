@@ -1,26 +1,4 @@
 {
-  "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "/oauthcallback",
-        "function": "oauthcallback"
-      },
-      {
-        "source": "/authgoogleapi",
-        "function": "authgoogleapi"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
   "functions": [
     {
       "source": "functions",
@@ -32,8 +10,5 @@
         "firebase-debug.*.log"
       ]
     }
-  ],
-  "database": {
-    "rules": "database.rules.json"
-  }
+  ]
 }

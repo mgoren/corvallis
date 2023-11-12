@@ -7,20 +7,18 @@ This sample demonstrates how to sync new data written to a Firebase database to 
 
 ---
 
+# BEFORE DO ANYTHING
+
+- **Delete `firebase.json`, `.firebaserc` and `.firebase` directory**
+
 # Configuration
 
+- firebase init functions --project PROJECT_ID_OR_ALIAS
 - Create google cloud service account on project, create keys for it and download json
 - Share spreadsheet with the service account email address
 - Enable Google Sheets API
 - `firebase functions:config:set googleapi.service_account='{paste full json from the downloaded service account key file}'`
 - `firebase functions:config:set googleapi.sheet_id="YOUR_SPREADSHEET_ID"`
-
-# Testing
-
-```
-firebase functions:config:get > .runtimeconfig.json // file must be in functions dir
-firebase emulators:start --only functions
-```
 
 # Deployment
 

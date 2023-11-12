@@ -1,18 +1,16 @@
 ### This is based very closely on Google's [starter code](https://github.com/firebase/functions-samples/tree/main/email-confirmation).
 
+# BEFORE DO ANYTHING
+
+- **Delete `firebase.json`, `.firebaserc` and `.firebase` directory**
+
 # Configuration
 
+- `firebase init functions --project PROJECT_ID_OR_ALIAS`
 - `firebase functions:config:set sendgrid.api_key="SENDGRID_API_KEY"`
 - Set **FROM** and **SUBJECT** in `index.js`
 
 Everything else should work as-is. This assumes that orders are saved to /orders in Firebase, and that order.receipt contains the HTML you want to send.
-
-# Testing
-
-```
-firebase functions:config:get > .runtimeconfig.json // file must be in functions dir
-firebase emulators:start --only functions
-```
 
 # Deployment
 

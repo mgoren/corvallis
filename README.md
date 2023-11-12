@@ -1,5 +1,17 @@
 # Configuration
 
+## Things to do when using this for a new project
+
+- delete firebase.json, .firebaserc, and .firebase directories
+- clear .env vars
+- git remote rm origin
+- delete node_modules, then npm install
+- create firebase project, register web app including firebase hosting, add realtime database
+- set database rules (read false, write true)
+- setup firebase functions (requires upgrade to blaze plan)
+- Add env vars locally and on github as repo secrets
+- Update config file
+
 **Stripe configuration**
 - On Stripe console, disable all payment methods except Cards, Apple Pay, Google Pay
 - Use test api keys until ready to launch
@@ -7,7 +19,7 @@
 **Also see the README files inside the functions folder!**
 
 **Setup Firebase:**
-- Create firebase project and add to app, including firebase hosting
+- Create firebase project, register web app, and add to app, including firebase hosting
 - Fill in firebaseConfig values in `.env` file (see `.env.example`)
 - Create Firebase Realtime Database in test mode
 - Fill in DB URL (likely includes `rtdb.firebaseio.com`) as _REACT_APP_FIREBASE_DATABASE_URL_ in `.env` file

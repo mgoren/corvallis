@@ -1,5 +1,5 @@
-exports.createStripePaymentIntent = require('./stripe').createStripePaymentIntent;
-exports.cancelStripePaymentIntent = require('./stripe').cancelStripePaymentIntent;
+// exports.createStripePaymentIntent = require('./stripe').createStripePaymentIntent;
+// exports.cancelStripePaymentIntent = require('./stripe').cancelStripePaymentIntent;
 exports.appendrecordtospreadsheet = require('./google-sheet-sync').appendrecordtospreadsheet;
 exports.sendEmailConfirmation = require('./email-confirmation').sendEmailConfirmation;
 

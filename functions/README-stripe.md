@@ -1,3 +1,7 @@
+# BEFORE DO ANYTHING
+
+- **Delete `firebase.json`, `.firebaserc` and `.firebase` directory**
+
 # Configuration
 
 ```

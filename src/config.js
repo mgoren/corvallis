@@ -2,7 +2,7 @@
 
 import * as Yup from 'yup';
 
-export const SANDBOX_MODE = false; // for testing only
+export const SANDBOX_MODE = true; // for testing only
 
 export const NUM_PAGES = 3;
 export const STEPS = [
@@ -12,17 +12,17 @@ export const STEPS = [
   {key: 'checkout', label: 'Checkout'}
 ];
 
-export const PAYMENT_METHODS = ['stripe', 'check']; // options are stripe, paypal, and/or check (first is default)
+export const PAYMENT_METHODS = ['paypal']; // options are stripe, paypal, and/or check (first is default)
 
-export const TITLE = 'Supersonic 2024'
-export const CONFIRMATION_PAYPAL_TITLE = 'Supersonic Confirmation';
-export const CONFIRMATION_CHECK_TITLE = 'Supersonic Registration';
-export const EMAIL_CONTACT = 'info@supersoniccontra.com';
-export const DETAILS_URL = 'portlandcountrydance.org';
-export const COVID_POLICY_URL = 'www.supersoniccontra.com/about#covid';
-export const CONTACT_TRACING_URL = 'pcdc.fun/contact-trace';
-export const WAIVER_URL = 'pcdc.fun/files/PCDC_Events_Waiver.pdf';
-export const PAYPAL_ME_URL = 'paypal.me/PortlandBall';
+export const TITLE = '2024 Corvallis Weekend Payment'
+export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Confirmation';
+export const CONFIRMATION_CHECK_TITLE = 'Corvallis Registration';
+export const EMAIL_CONTACT = 'cfs.dance.weekend@gmail.com';
+export const COVID_POLICY_URL = 'ccw.corvallisfolklore.org/ccw/faq';
+// export const DETAILS_URL = 'portlandcountrydance.org';
+// export const CONTACT_TRACING_URL = 'pcdc.fun/contact-trace';
+// export const WAIVER_URL = 'pcdc.fun/files/PCDC_Events_Waiver.pdf';
+// export const PAYPAL_ME_URL = 'paypal.me/PortlandBall';
 
 export const ADMISSION_COST_RANGE = [120, 280];
 export const ADMISSION_COST_DEFAULT = 180;
