@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { push, ref, serverTimestamp } from "firebase/database";
 import { renderToStaticMarkup } from 'react-dom/server';
-import { scrollToTop, warnBeforeUserLeavesSite, fullName } from 'utils';
+import { scrollToTop, warnBeforeUserLeavesSite } from 'utils';
 import { PAYMENT_METHODS, EMAIL_CONTACT, NUM_PAGES } from 'config';
 import db from 'firebase.js';
 import PaypalCheckoutButton from 'components/PaypalCheckoutButton';
