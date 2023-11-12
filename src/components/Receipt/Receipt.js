@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import { scrollToTop } from 'utils';
+import { scrollToTop, websiteLink } from 'utils';
+import { COVID_POLICY_URL } from 'config';
 import OrderSummary from 'components/OrderSummary';
 import { Divider, Typography } from '@mui/material';
+import { StyledLink } from 'components/Layout/SharedStyles';
 
 export default function Receipt({ order }) {
   useEffect(() => { scrollToTop() },[]);
@@ -74,18 +76,20 @@ export function SharedReceipt() {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        We will send an acceptance or wait-list notification before Christmas.<br />
+        <strong>We will send an acceptance or wait-list notification before Christmas.</strong><br />
         If you have not heard from us by December 23rd, please let us know.<br />
         If you need early acceptance to finalize your travel arrangements, be<br />
         sure to let us know: We love dancing with folks from other communities!
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        [Covid protocols here]<br />
+        Masking, vaccination, and Covid testing will be required.<br />
+        See <StyledLink to={websiteLink(COVID_POLICY_URL)}>here</StyledLink> for the full Covid policy.<br />
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Corvallis Contra Dance Weekend is a fragrance-free event. Please use only fragrance-free products.
+        Corvallis Contra Dance Weekend is a fragrance-free event.<br />
+        Please use only fragrance-free products.
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
