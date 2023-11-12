@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
-import { HOSPITALITY_OPTIONS } from 'config';
+// import { HOSPITALITY_OPTIONS } from 'config';
 
 export default function OrderSummary({ order, currentPage }) {
   const total = order.admissionCost * order.admissionQuantity + order.donation;
 
-  let hospitalityTitles = getCheckboxTitles({ property: order.hospitality, options: HOSPITALITY_OPTIONS });
+  // let hospitalityTitles = getCheckboxTitles({ property: order.hospitality, options: HOSPITALITY_OPTIONS });
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function OrderSummary({ order, currentPage }) {
         ))}
       </Box>
 
-      {(isNaN(currentPage) || currentPage > 2) &&
+      {/* {(isNaN(currentPage) || currentPage > 2) &&
         <Box sx={{ mt: 5 }}>
           <Typography variant="body" gutterBottom sx={{ fontWeight: 'bold' }}>
             Miscellanea
@@ -36,12 +36,12 @@ export default function OrderSummary({ order, currentPage }) {
             {order.comments && <>Comments: {order.comments}<br /></>}
           </p>
         </Box>
-      }
+      } */}
 
       {isNaN(currentPage) &&
         <Box sx={{ mt: 5 }}>
           <Typography variant="body" gutterBottom sx={{ fontWeight: 'bold' }}>
-            {currentPage === 'confirmation' && order.paypalEmail !== 'check' ? 'Amount paid' : 'Amount due'}
+            {currentPage === 'confirmation' && order.electronicPaymentId !== 'check' ? 'Amount paid' : 'Amount due'}
           </Typography>
           <p>
             Admissions: {order.admissionQuantity} x ${order.admissionCost} = ${order.admissionQuantity * order.admissionCost}<br />
@@ -63,15 +63,15 @@ function displayAddress(address, apartment) {
   return apartment ? `${address} ${displayApartment}` : address;
 }
 
-function getCheckboxTitles({ property, options }) {
-  let checkboxTitles = property.map(property => {
-    const checkboxOption = options.find(option => option.value === property);
-    return checkboxOption ? checkboxOption.label : property;
-  });
-  checkboxTitles.sort((a, b) => {
-    const aIndex = options.findIndex(option => option.label === a);
-    const bIndex = options.findIndex(option => option.label === b);
-    return aIndex - bIndex;
-  });
-  return checkboxTitles;
-}
+// function getCheckboxTitles({ property, options }) {
+  // let checkboxTitles = property.map(property => {
+    // const checkboxOption = options.find(option => option.value === property);
+    // return checkboxOption ? checkboxOption.label : property;
+  // });
+  // checkboxTitles.sort((a, b) => {
+    // const aIndex = options.findIndex(option => option.label === a);
+    // const bIndex = options.findIndex(option => option.label === b);
+    // return aIndex - bIndex;
+  // });
+  // return checkboxTitles;
+// }

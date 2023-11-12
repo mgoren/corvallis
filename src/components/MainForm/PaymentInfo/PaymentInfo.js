@@ -5,7 +5,7 @@ import { ADMISSION_COST_RANGE, DONATION_OPTION, DONATION_RANGE } from "config";
 import { StyledPaper, Title } from 'components/Layout/SharedStyles';
 import { InputAdornment, Typography } from '@mui/material';
 import { useFormikContext } from 'formik';
-import PaymentExplanation from 'components/PaymentExplanation';
+// import PaymentExplanation from 'components/PaymentExplanation';
 
 export default function PaymentInfo({ donate, setDonate, clampValue, admissionQuantity }) {
   const { values } = useFormikContext();
@@ -15,7 +15,7 @@ export default function PaymentInfo({ donate, setDonate, clampValue, admissionQu
   return (
     <section className='PaymentInfo'>
 
-      <PaymentExplanation />
+      {/* <PaymentExplanation /> */}
 
       <div className='admissions-section'>
         <StyledPaper className='admissions-cost'>

@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
-import { EMAIL_CONTACT, COVID_POLICY_URL } from 'config';
-import { mailtoLink, websiteLink, scrollToTop } from 'utils';
+import { scrollToTop } from 'utils';
 import OrderSummary from 'components/OrderSummary';
-import { StyledLink } from 'components/Layout/SharedStyles';
 import { Divider, Typography } from '@mui/material';
 
 export default function Receipt({ order }) {
@@ -19,18 +17,19 @@ function CheckReceipt({ order }) {
   return (
     <>
       <Typography component='p' color='error'>
-        <strong>Your registration is not yet complete!</strong><br />
-        Please send a check for ${order.total} to secure your spot.
+        <strong>You are not yet registered!</strong><br />
+        Paying on time can increase your chance of being accepted.<br />
+        Please send a check for ${order.total}.
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Make your check out to Supersonic Contra Dance Weekend, write your name in the memo area, and mail to:
+        Make your check out to CFS or Corvallis Folklore Society:
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Supersonic Contra Dance Weekend<br />
-        PO Box 1173<br />
-        Anacortes, WA 98221
+        CFS Dance Registrars<br />
+        6575 NW Mountain Laurel Pl<br />
+        Corvallis OR 97330
       </Typography>
 
       <SharedReceipt />
@@ -46,8 +45,8 @@ function PaypalReceipt({ order }) {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        We're excited to have you attend this year's Supersonic. 
-        Your payment for ${order.total} has been successfully processed. 
+        Thank you for signing up for the 2024 Contra Corvallis Dance Weekend!<br />
+        Your payment for ${order.total} has been successfully processed.<br />
       </Typography>
 
       <SharedReceipt />
@@ -63,7 +62,7 @@ export function AdditionalPersonReceipt({ order }) {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        We're excited to welcome you to the 2024 Supersonic Contra Dance Weekend. 
+        Thank you for registering for the . 
       </Typography>
 
       <SharedReceipt />
@@ -75,30 +74,22 @@ export function SharedReceipt() {
   return (
     <>
       <Typography component='p' sx={{ mt: 2 }}>
-        Please sign <StyledLink to='https://www.supersoniccontra.com/supersonic/supersonic-waiver.pdf'>this waiver</StyledLink> and email it to <StyledLink to={mailtoLink(EMAIL_CONTACT)}>{EMAIL_CONTACT}</StyledLink>.<br />
+        We will send an acceptance or wait-list notification before Christmas.<br />
+        If you have not heard from us by December 23rd, please let us know.<br />
+        If you need early acceptance to finalize your travel arrangements, be<br />
+        sure to let us know: We love dancing with folks from other communities!
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Supersonic will follow the mask guidelines of the weekly Seattle contra dances.<br />
-        As of November 1, well-fitting face masks are required.<br />
-        Please do not attend if you are feeling unwell.<br />
-        See <StyledLink to={websiteLink(COVID_POLICY_URL)}>here</StyledLink> for the full Covid and refund policies.
+        [Covid protocols here]<br />
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Supersonic is a fragrance-free event. Please use only fragrance-free products.
+        Corvallis Contra Dance Weekend is a fragrance-free event. Please use only fragrance-free products.
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        If you offered or requested housing, you will receive an email from Kristin, our housing coordinator.
-      </Typography>
-
-      <Typography component='p' sx={{ mt: 2 }}>
-        If you are able to volunteer, please contact <StyledLink to={mailtoLink(EMAIL_CONTACT)}>{EMAIL_CONTACT}</StyledLink>.
-      </Typography>
-
-      <Typography component='p' sx={{ mt: 2 }}>
-        Questions:  Contact Karen at <StyledLink to={mailtoLink(EMAIL_CONTACT)}>{EMAIL_CONTACT}</StyledLink>.
+        Hope to dance with you soon at the 2024 Corvallis Contra Weekend!
       </Typography>
     </>
   );

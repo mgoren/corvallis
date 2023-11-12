@@ -31,7 +31,7 @@ const PaypalCheckoutButton = ({ paypalButtonsLoaded, setPaypalButtonsLoaded, tot
 		return actions.order.create({
 			purchase_units: [
 				{
-					description: 'ECD Ball 2023',
+					description: 'Corvallis Contra Wekeend 2024',
 					amount: {
 						value: total.toString() // must be a string
 					}

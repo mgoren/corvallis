@@ -4,18 +4,19 @@ import * as Yup from 'yup';
 
 export const SANDBOX_MODE = true; // for testing only
 
-export const NUM_PAGES = 3;
+export const NUM_PAGES = 1;
 export const STEPS = [
   {key: 1, label: 'Contact'},
-  {key: 2, label: 'Misc'},
-  {key: 3, label: 'Payment'},
+  // {key: 2, label: 'Misc'},
+  // {key: 3, label: 'Payment'},
   {key: 'checkout', label: 'Checkout'}
 ];
 
-export const PAYMENT_METHODS = ['paypal']; // options are stripe, paypal, and/or check (first is default)
+export const PAYMENT_METHODS = ['paypal', 'check']; // options are stripe, paypal, and/or check (first is default)
 
-export const TITLE = '2024 Corvallis Weekend Payment'
-export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Confirmation';
+export const TITLE = '2024 Corvallis Weekend Registation'
+// export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Confirmation';
+export const CONFIRMATION_PAYPAL_TITLE = 'Corvallis Registration';
 export const CONFIRMATION_CHECK_TITLE = 'Corvallis Registration';
 export const EMAIL_CONTACT = 'cfs.dance.weekend@gmail.com';
 export const COVID_POLICY_URL = 'ccw.corvallisfolklore.org/ccw/faq';
@@ -24,8 +25,8 @@ export const COVID_POLICY_URL = 'ccw.corvallisfolklore.org/ccw/faq';
 // export const WAIVER_URL = 'pcdc.fun/files/PCDC_Events_Waiver.pdf';
 // export const PAYPAL_ME_URL = 'paypal.me/PortlandBall';
 
-export const ADMISSION_COST_RANGE = [120, 280];
-export const ADMISSION_COST_DEFAULT = 180;
+export const ADMISSION_COST_RANGE = [110, 110];
+export const ADMISSION_COST_DEFAULT = 110;
 export const ADMISSION_QUANTITY_RANGE = [1, 2];
 export const DONATION_OPTION = true;
 export const DONATION_RANGE = [0, 999];
@@ -106,8 +107,8 @@ export const FIELD_CONFIG = {
     validation: PHONE_VALIDATION.required('Please enter phone number.'),
     defaultValue: '',
     order: 7,
-    // width: 12,
-    width: 4,
+    width: 12,
+    // width: 4,
     autoComplete: 'tel'
   },
   address: {
@@ -131,8 +132,8 @@ export const FIELD_CONFIG = {
     validation: Yup.string().required('Please enter city.'),
     defaultValue: '',
     order: 10,
-    // width: 6,
-    width: 5,
+    width: 6,
+    // width: 5,
     autoComplete: 'city'
   },
   state: {
@@ -166,10 +167,8 @@ export const FIELD_CONFIG = {
 // below is config for this particular registration instance
 
 // order of FIRST_PERSON_FIELDS is used in emailConfirmationIsFirstInvalidField
-const FIRST_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'emailConfirmation', 'phone', 'city', 'state'];
-const OTHER_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'phone', 'city', 'state'];
-// const FIRST_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'emailConfirmation', 'phone', 'address', 'apartment', 'city', 'state', 'zip', 'country'];
-// const OTHER_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'phone', 'address', 'apartment', 'city', 'state', 'zip', 'country'];
+const FIRST_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'emailConfirmation', 'phone', 'address', 'apartment', 'city', 'state', 'zip', 'country'];
+const OTHER_PERSON_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'phone', 'address', 'apartment', 'city', 'state', 'zip', 'country'];
 
 export const PERSON_INPUTS = [
   { label: 'Your contact information', fields: FIRST_PERSON_FIELDS },
