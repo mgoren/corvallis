@@ -17,6 +17,7 @@
 
 // TODO: Set these
 const FROM = '"Corvallis Contra Weekend" <ccw@pdxcontra.org>'; // CHANGE THIS EMAIL!
+const REPLY = 'cfs.dance.registrar@gmail.com'; // CHANGE THIS EMAIL!
 const SUBJECT = '2024 Corvallis Contra Weekend Registration';
 
 // Firebase database path
@@ -70,6 +71,7 @@ exports.sendEmailConfirmation = functions.database.ref(`${CONFIG_DATA_PATH}/{ITE
     const receipt = i === 0 ? order.receipt : order.additionalPersonReceipt;
     const mailOptions = {
       from: FROM,
+      replyTo: REPLY,
       to: person.email,
       subject: SUBJECT,
       html: receipt
