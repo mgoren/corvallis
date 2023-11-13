@@ -5,7 +5,7 @@
 - delete firebase.json, .firebaserc, and .firebase directories
 - clear .env vars
 - git remote rm origin
-- delete node_modules, then npm install
+- rm -rf node_modules, then npm install
 - create firebase project, register web app including firebase hosting, add realtime database
 - set database rules (read false, write true)
 - setup firebase functions (requires upgrade to blaze plan)
