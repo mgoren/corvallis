@@ -25,12 +25,12 @@ function CheckReceipt({ order }) {
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Make your check out to CFS or Corvallis Folklore Society:
+        Make your check out to Corvallis Folklore Society:
       </Typography>
 
       <Typography component='p' sx={{ mt: 2 }}>
-        Corvallis Contra Weekend<br />
-        c/o CFS<br />
+        CCW<br />
+        c/o Corvallis Folklore Society<br />
         PO Box 1690<br />
         Corvallis OR 97339
       </Typography>

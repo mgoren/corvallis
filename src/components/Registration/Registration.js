@@ -11,7 +11,7 @@ import Receipt from "components/Receipt";
 import { cache, cached } from 'utils';
 import { PAYMENT_METHODS, PAYPAL_OPTIONS, ORDER_DEFAULTS, TITLE, CONFIRMATION_CHECK_TITLE, CONFIRMATION_PAYPAL_TITLE, SANDBOX_MODE } from "config";
 import { Box, Checkbox } from "@mui/material";
-import { StyledPaper, StyledLink } from 'components/Layout/SharedStyles';
+import { StyledPaper, StyledLink, Paragraph } from 'components/Layout/SharedStyles';
 
 export default function Registration() {
   const [registering, setRegistering] = useState(false);
@@ -29,11 +29,11 @@ const PreRegistration = ({ setRegistering }) => {
         <li><StyledLink to='https://corvallisfolklore.org/home/dance-safety-policy/'>Safety Policy</StyledLink> (will open in a new tab)</li>
       </ul>
 
-      <p>
+      <Paragraph sx={{ lineHeight: 2, mt: 4 }}>
         I acknowledge that I have read and agree to follow both the Covid Policy and the Safety Policy for the 2024 Corvallis Contra Dance Weekend. 
         If I am registering two people, I acknowledge that both have read and agreed to these policies.
         <Checkbox onChange={() => setRegistering(true)} />
-      </p>
+      </Paragraph>
     </StyledPaper>
   );
 }

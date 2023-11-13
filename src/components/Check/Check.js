@@ -16,12 +16,12 @@ export default function Check({ saveOrderToFirebase, processing, setProcessing }
       {!processing &&
         <>
           <Typography sx={{ mt: 2 }}>
-            Make your check out to CFS or Corvallis Folklore Society<br />
+            Make your check out to Corvallis Folklore Society<br />
             Write your name in the memo area, and mail to:
           </Typography>
           <Typography sx={{ mt: 2 }}>
-            Corvallis Contra Weekend<br />
-            c/o CFS<br />
+            CCW<br />
+            c/o Corvallis Folklore Society<br />
             PO Box 1690<br />
             Corvallis OR 97339
           </Typography>
