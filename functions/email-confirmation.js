@@ -16,8 +16,8 @@
 'use strict';
 
 // TODO: Set these
-const FROM = '"Corvallis Dance Weekend" <contra@portlandcountrydance.org>'; // CHANGE THIS EMAIL!
-const SUBJECT = '2024 Corvallis Dance Weekend Registration';
+const FROM = '"Corvallis Contra Weekend" <ccw@pdxcontra.org>'; // CHANGE THIS EMAIL!
+const SUBJECT = '2024 Corvallis Contra Weekend Registration';
 
 // Firebase database path
 const CONFIG_DATA_PATH = '/orders';
