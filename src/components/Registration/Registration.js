@@ -30,7 +30,8 @@ const PreRegistration = ({ setRegistering }) => {
       </ul>
 
       <p>
-        I acknowledge that I have read and agree to follow both the Covid Policy and the Safety Policy for the 2024 Corvallis Contra Dance Weekend.
+        I acknowledge that I have read and agree to follow both the Covid Policy and the Safety Policy for the 2024 Corvallis Contra Dance Weekend. 
+        If I am registering two people, I acknowledge that both have read and agreed to these policies.
         <Checkbox onChange={() => setRegistering(true)} />
       </p>
     </StyledPaper>
