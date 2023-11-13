@@ -10,47 +10,32 @@ import OrderSummary from "components/OrderSummary";
 import Receipt from "components/Receipt";
 import { cache, cached } from 'utils';
 import { PAYMENT_METHODS, PAYPAL_OPTIONS, ORDER_DEFAULTS, TITLE, CONFIRMATION_CHECK_TITLE, CONFIRMATION_PAYPAL_TITLE, SANDBOX_MODE } from "config";
-import { Box } from "@mui/material";
-// import { PageTitle, Paragraph, StyledPaper, StyledLink } from 'components/Layout/SharedStyles';
+import { Box, Checkbox } from "@mui/material";
+import { StyledPaper, StyledLink } from 'components/Layout/SharedStyles';
 
 export default function Registration() {
-  // const [registering, setRegistering] = useState(false);
+  const [registering, setRegistering] = useState(false);
   return (
-    // registering ? <RealRegistration /> : <PreRegistration setRegistering={setRegistering} />
-    <RealRegistration />
+    registering ? <RealRegistration /> : <PreRegistration setRegistering={setRegistering} />
   );
 }
 
-// const PreRegistration = ({ setRegistering }) => {
-//   return(
-//     <StyledPaper>
-//       <PageTitle>Ways to Pay</PageTitle>
+const PreRegistration = ({ setRegistering }) => {
+  return(
+    <StyledPaper>
+      <p>Please read the Covid Policy and Safety Policy for the 2024 Corvallis Contra Dance Weekend:</p>
+      <ul>
+        <li><StyledLink to='https://corvallisfolklore.org/home/ccw-faq/#Covid'>Covid Policy</StyledLink> (will open in a new tab)</li>
+        <li><StyledLink to='https://corvallisfolklore.org/home/dance-safety-policy/'>Safety Policy</StyledLink> (will open in a new tab)</li>
+      </ul>
 
-//       <Paragraph>
-//         <strong>1. Pay as part of online registration</strong><br />
-//         The preferred method of paying for the Ball is to pay electronically as part of the online registration process. 
-//         You will be able to do this by credit card, debit card, or with PayPal. 
-//         If you don't pay online at registration time, just use one of the other methods below.
-//       </Paragraph>
-
-//       <Paragraph>
-//         <strong>2. Pay electronically at a later date via PayPal.Me</strong><br />
-//           If you prefer to pay electronically at a later date, you can pay via PayPal.Me <StyledLink to={websiteLink(PAYPAL_ME_URL)}>here</StyledLink>. 
-//           This requires you to have a PayPal account, but you can sign up for one on the spot. You can then pay by credit card, debit card, or your bank account. 
-//           Please specify the registration amount and "Add a Note" to include your name. 
-//       </Paragraph>
-
-//       <Paragraph>
-//         <strong>3. Write a paper check</strong><br />
-//         <em>Make your check out to PCDC</em>, write your name in the memo area, and mail to:<br />
-//         Portland ECD Ball<br />
-//         David Macemon<br />
-//         19936 Derby St<br />
-//         West Linn, OR 97068
-//       </Paragraph>
-//     </StyledPaper>
-//   );
-// }
+      <p>
+        I acknowledge that I have read and agree to follow both the Covid Policy and the Safety Policy for the 2024 Corvallis Contra Dance Weekend.
+        <Checkbox onChange={() => setRegistering(true)} />
+      </p>
+    </StyledPaper>
+  );
+}
 
 const RealRegistration = () => {
   const [order, setOrder] = useState(cached('order') || ORDER_DEFAULTS);

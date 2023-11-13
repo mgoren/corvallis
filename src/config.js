@@ -67,14 +67,14 @@ export const FIELD_CONFIG = {
     autoComplete: 'family-name'
   },
   nametag: {
-    label: 'Nametag',
+    label: 'Name for badge',
     validation: NAME_VALIDATION,
     defaultValue: '',
     order: 3,
     width: 12
   },
   pronouns: {
-    label: 'Pronouns for nametag',
+    label: 'Pronouns for badge',
     validation: PRONOUNS_VALIDATION,
     defaultValue: '',
     order: 4,
