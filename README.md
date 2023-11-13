@@ -5,7 +5,7 @@
 - delete firebase.json, .firebaserc, and .firebase directories
 - clear .env vars
 - git remote rm origin
-- rm -rf node_modules, then npm install
+- delete node_modules, then npm install
 - create firebase project, register web app including firebase hosting, add realtime database
 - set database rules (read false, write true)
 - setup firebase functions (requires upgrade to blaze plan)
@@ -35,7 +35,8 @@
 Set environment variables in `.env`
 
 **Production (with GitHub workflow and Firebase hosting):**
-Set environment variables as [secrets](https://github.com/mgoren/corvallis/settings/secrets/actions) on the repo and update `.github/workflows/firebase-hosting-merge.yml`.
+- Set environment variables as [secrets](https://github.com/mgoren/corvallis/settings/secrets/actions) on the repo and update `.github/workflows/firebase-hosting-merge.yml`.
+- Deploy again after updating github secrets!
 
 # Deployment
 
