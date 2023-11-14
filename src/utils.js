@@ -76,3 +76,16 @@ const emailConfirmationIsFirstInvalidField = (errors) => {
 };
 
 export const fullName = (person) => `${person.first} ${person.last}`;
+
+export const getCheckboxTitles = ({ property, options }) => {
+  let checkboxTitles = property.map(property => {
+    const checkboxOption = options.find(option => option.value === property);
+    return checkboxOption ? checkboxOption.label : property;
+  });
+  checkboxTitles.sort((a, b) => {
+    const aIndex = options.findIndex(option => option.label === a);
+    const bIndex = options.findIndex(option => option.label === b);
+    return aIndex - bIndex;
+  });
+  return checkboxTitles;
+}
