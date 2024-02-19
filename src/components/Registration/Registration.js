@@ -95,7 +95,7 @@ const RealRegistration = () => {
 
   return PAYMENT_METHODS.includes('paypal') ?
     <PayPalScriptProvider options={PAYPAL_OPTIONS}>
-      {content}
+      Thanks for a great 2024 weekend! We hope to see you next year!
     </PayPalScriptProvider>
   : content;
 }
