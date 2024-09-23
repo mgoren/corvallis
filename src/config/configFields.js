@@ -12,7 +12,7 @@ const PHONE_VALIDATION = Yup.string().matches(PHONE_REGEX, 'Please enter a valid
 
 // config for this particular registration instance; update this as needed!
 export const PERSON_CONTACT_FIELDS = ['first', 'last', 'nametag', 'pronouns', 'email', 'emailConfirmation', 'phone', 'address', 'apartment', 'city', 'state', 'zip', 'country'];
-export const PERSON_MISC_FIELDS = ['share', 'dietaryPreferences', 'dietaryRestrictions', 'allergies', 'scent', 'carpool', 'bedding', 'volunteer', 'housing', 'roommate', 'photo', 'comments'];
+export const PERSON_MISC_FIELDS = ['share', 'carpool', 'volunteer', 'scholarship', 'comments'];
 export const PERSON_PAYMENT_FIELDS = ['admission'];
 
 // this can include config for fields not used in this particular registration instance
@@ -32,13 +32,13 @@ export const FIELD_CONFIG = {
     autoComplete: 'family-name'
   },
   pronouns: {
-    label: 'Pronouns (not shared)',
+    label: 'Pronouns for button',
     validation: PRONOUNS_VALIDATION,
     defaultValue: '',
     width: 12
   },
   nametag: {
-    label: 'Name for roster',
+    label: 'Name for button',
     validation: NAME_VALIDATION.required('Please enter name for roster.'),
     defaultValue: '',
     width: 12
@@ -123,23 +123,18 @@ export const FIELD_CONFIG = {
       { label: 'Include my name in the roster', value: 'name' },
       { label: 'Include my email in the roster', value: 'email' },
       { label: 'Include my phone number in the roster', value: 'phone' },
-      { label: 'Include my address in the roster', value: 'address' },
+      { label: 'Include my city, state, zip in the roster', value: 'address' },
     ],
     validation: Yup.array(),
     defaultValue: ['name', 'email', 'phone', 'address'],
   },
   carpool: {
     type: 'checkbox',
-    title: "Transportation",
-    label: "If you check any of these boxes we will be in touch closer to camp to coordinate. We will do our best to meet everyone's carpool needs. For housing, we will put people directly in touch with possible matches if there are any.  NOTE: historically, carpools and housing are tight. If you are able to offer a ride, please check the box!",
+    title: "Carpool",
+    label: "Do you want your city, state, zip, and email shared for carpooling?",
     options: [
-      { label: "I can offer a ride to camp", value: 'offer-ride' },
-      { label: "I might be able to give a ride to camp", value: 'offer-ride-maybe' },
-      { label: "I need a ride to camp", value: 'need-ride' },
-      { label: "I might need a ride to camp", value: 'need-ride-maybe' },
-      { label: "I am willing and able to rent a car to drive to camp if necessary", value: 'rent-car' },
-      { label: "I can offer a place to stay in the Bay Area before or after camp", value: 'offer-housing' },
-      { label: "I could use help finding a place to stay in the Bay Area before or after camp", value: 'need-housing' },
+      { label: 'Yes', value: 'yes' },
+      { label: 'No', value: 'no' },
     ],
     validation: Yup.array(),
     defaultValue: [],
@@ -147,12 +142,11 @@ export const FIELD_CONFIG = {
   volunteer: {
     type: 'checkbox',
     title: "Volunteering",
-    label: "Everyone will be asked to help with camp, but we need a few people who can commit in advance or in larger ways.",
+    label: "Do you want to volunteer to help out over the weekend? Jobs might include sweeping or checking paper products stashed in the bathrooms.",
     options: [
-      { label: "I can come early to help with camp set up", value: 'before' },
-      { label: "I can stay late to help with camp take down", value: 'after' },
-      { label: "I can take on a lead volunteer role during camp (e.g. button maker or snack coordinator)", value: 'lead' },
-      { label: "I can help coordinate in the months before camp (e.g. bedding)", value: 'bedding' },
+      { label: 'Yes', value: 'yes' },
+      { label: 'No thanks', value: 'no' },
+      { label: 'Other (please explain in comments below)', value: 'other' },
     ],
     validation: Yup.array(),
     defaultValue: [],
@@ -263,7 +257,7 @@ export const FIELD_CONFIG = {
   scholarship: {
     type: 'checkbox',
     title: "Scholarships (limited availability)",
-    label: "We feel we've kept the price of camp remarkably low.  However, if you are limited financially, we have a small number of half price scholarships available for camp. If you'd like to be considered for one of these, please let us know.",
+    label: "We feel we've kept the price of camp remarkably low. However, if you are limited financially, we have a small number of half price scholarships available for camp. If you'd like to be considered for one of these, please let us know.",
     options: [
       { label: 'Yes, please consider me for a scholarship', value: 'yes' },
     ],
@@ -273,7 +267,7 @@ export const FIELD_CONFIG = {
   comments: {
     type: 'textarea',
     title: "Anything else?",
-    label: "Tell us anything else you'd like us to know. We want to be sure we don't miss anything that could make the weekend welcoming and enjoyable.",
+    label: "Please tell us any special requests or information we should know regarding your registration. This might include non-dancers who want to attend camp but want a badge or other special needs, for example.",
     validation: Yup.string(),
     defaultValue: '',
     rows: 5,

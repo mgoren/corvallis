@@ -7,14 +7,14 @@ import config from 'config';
 const { TITLE, REGISTRATION_ONLY } = config;
 
 const pages = [
-  { title: 'Home', path: '/' },
-  { title: 'About', path: '/about' },
-  { title: 'Bands & Callers', path: '/staff' },
-  { title: 'Itinerary', path: '/schedule' },
-  { title: 'Seattle', path: '/seattle' },
-  { title: 'Contact', path: '/contact' },
-  { title: 'Payment info', path: '/paymentinfo' },
-  { title: 'Registration', path: '/registration' }
+  // { title: 'Home', path: '/' },
+  // { title: 'About', path: '/about' },
+  // { title: 'Bands & Callers', path: '/staff' },
+  // { title: 'Itinerary', path: '/schedule' },
+  // { title: 'Seattle', path: '/seattle' },
+  // { title: 'Contact', path: '/contact' },
+  // { title: 'Payment info', path: '/paymentinfo' },
+  // { title: 'Registration', path: '/registration' }
 ];
 
 const row1 = pages.slice(0, 5);
@@ -70,13 +70,13 @@ export default function Navbar({ toggleColorMode }) {
       {/* brand icon */}
       <Box sx={{ display: { xs: 'none', md: 'inline' } }}>
         <Link component={RouterLink} to='/'>
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="" style={{ margin: '10px 10px 10px 0px' }}/>
+          <img src={process.env.PUBLIC_URL + '/corvallis/cfs.jpeg'} alt="" style={{ margin: '10px 10px 10px 0px' }}/>
         </Link>
       </Box>
 
       <Box sx={{ display: { xs: 'inline', sm: 'inline', md: 'none' } }}>
         <Link component={RouterLink} to='/'>
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="" style={{ margin: '10px 10px 10px 0px', height: '80px' }}/>
+          <img src={process.env.PUBLIC_URL + '/corvallis/cfs.jpeg'} alt="" style={{ margin: '10px 10px 10px 0px', height: '80px' }}/>
         </Link>
       </Box>
 
@@ -100,7 +100,7 @@ export default function Navbar({ toggleColorMode }) {
   const contentRegistrationOnly = (
     <>
       <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>
-        <img src={process.env.PUBLIC_URL + '/logo.png'} alt="" style={{ margin: '10px 10px 10px 0px' }}/>
+        <img src={process.env.PUBLIC_URL + '/corvallis/cfs.jpeg'} alt="" style={{ margin: '10px 10px 10px 0px' }}/>
       </Box>
       <ListItem sx={{ display: {xs: 'none', sm: 'block' }, my: 2, color: 'inherit' }}>
         <Typography variant="h4" textAlign="center">{TITLE}</Typography>

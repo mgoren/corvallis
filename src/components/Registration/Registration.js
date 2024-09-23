@@ -8,8 +8,8 @@ import Error from "components/Error";
 import Header from 'components/Header';
 import IntroHeader from 'components/Header/IntroHeader';
 import OrderSummary from "components/OrderSummary";
-import { Typography, Button } from "@mui/material";
-import { StyledPaper, Paragraph } from 'components/Layout/SharedStyles';
+import { Typography, Checkbox } from "@mui/material";
+import { StyledPaper, Paragraph, StyledLink } from 'components/Layout/SharedStyles';
 import config from 'config';
 const { PAYMENT_METHODS, PAYPAL_OPTIONS, TITLE, CONFIRMATION_CHECK_TITLE, CONFIRMATION_PAYPAL_TITLE, SANDBOX_MODE, SHOW_PRE_REGISTRATION } = config;
 
@@ -27,9 +27,15 @@ const PreRegistration = ({ setRegistering }) => {
     <StyledPaper>
       <Typography variant="h4" color='error' sx={{ fontWeight: "bold"}}>TEST MODE ONLY</Typography>
       <Typography variant="h6">DO NOT USE FOR ACTUAL REGISTRATION</Typography>
+      <p>Please read the Covid Policy and Safety Policy for the 2025 Corvallis Contra Dance Weekend:</p>
+      <ul>
+        <li><StyledLink to='https://corvallisfolklore.org/home/ccw-faq/#Covid'>Covid Policy</StyledLink> (will open in a new tab)</li>
+        <li><StyledLink to='https://corvallisfolklore.org/home/dance-safety-policy/'>Safety Policy</StyledLink> (will open in a new tab)</li>
+      </ul>
       <Paragraph sx={{ lineHeight: 2, mt: 4 }}>
-      <Button variant='contained' color='secondary' onClick={() => setRegistering(true)}>Continue</Button>
-        {/* <Checkbox onChange={() => setRegistering(true)} /> */}
+        I acknowledge that I have read and agree to follow both the Covid Policy and the Safety Policy for the 2025 Corvallis Contra Dance Weekend. 
+        If I am registering multiple people, I acknowledge that everyone has read and agreed to these policies.
+        <Checkbox onChange={() => setRegistering(true)} />
       </Paragraph>
     </StyledPaper>
   );

@@ -18,7 +18,7 @@ React app that uses Firebase for database, hosting, and serverless functions bac
 
 ## Copy template project
 
-- ME: `cp -R [TEMPLATE_DIR] [DESTINATION_DIR] && cd [DESTINATION_DIR] && gh repo create [NAME] [--private] --source=. --remote=origin`
+- ME: `cp -R [TEMPLATE_DIR] [DESTINATION_DIR] && cd [DESTINATION_DIR] && git remote rm origin && gh repo create [NAME] [--public|private] --source=. --remote=origin`
 - ANYONE ELSE: Fork [template project](https://github.com/mgoren/registration-template) and clone it to a local directory
 
 ## Erase settings from old project:
@@ -32,7 +32,7 @@ bash clear-old-settings.sh
 - Update site title and meta content description in `public/index.html`
 - Update values in `config` folder files
 - Update favicon (can use [this site](https://www.favicon-generator.org) to generate them)
-- Copy desired logo to `public/logo.png` and set to desired height (likely <= 80px)
+- Copy desired logo to `public/logo.png` or similar and set to desired height (likely <= 80px)
 - Update `MiscInfo`, `OrderSummary`, `Receipt` and other pages as needed
 - Ensure receipt text for all scenarios is as desired!
 
@@ -103,11 +103,11 @@ gcloud beta services api-keys create --flags-file=google-places-api-flags.yaml -
 
 ## Enable reCAPTCHA for Firebase App Check
 
-- Replace EXAMPLE.COM above with actual domain in command below.
+- Replace EXAMPLE.COM with actual domain in command below.
 
 ```sh
 gcloud services enable recaptchaenterprise.googleapis.com --project [PROJECT_ID]
-gcloud recaptcha keys create --display-name="recaptcha-enterprise" --integration-type="SCORE" --web --domains="localhost,[PROJECT_ID].web.app,EXAMPLE.COM" --project [PROJECT_ID]
+gcloud recaptcha keys create --display-name="recaptcha-enterprise" --integration-type="SCORE" --web --domains="localhost,contra-corvallis.web.app,registration.pdxcontra.org" --project [PROJECT_ID]
 ```
 
 - Copy site key value to `REACT_APP_RECAPTCHA_SITE_KEY` in `.env`.
@@ -174,13 +174,12 @@ firebase deploy --only functions
 
 ## Add error logging for Firebase functions:
 
-Setup logs for appendrecordtospreadsheet Firebase function to notify on `severity=(ERROR OR INFO)`:
+Setup logs for Firebase functions to notify on error:
 
-- Do this two-line query:
+- Do this query:
 
 ```
-(resource.type="cloud_function" resource.labels.function_name=("appendrecordtospreadsheet") resource.labels.region="us-central1") OR (resource.type="cloud_run_revision" resource.labels.service_name=("appendrecordtospreadsheet") resource.labels.location="us-central1")
-severity=(ERROR OR INFO)
+resource.type="cloud_run_revision" severity="ERROR"
 ```
 
 - then click on "Create alert"

@@ -4,7 +4,7 @@ import OrderSummary, { PersonSummary } from 'components/OrderSummary';
 import { Divider, Typography } from '@mui/material';
 import { StyledLink } from 'components/Layout/SharedStyles';
 import config from 'config';
-const { COVID_POLICY_URL, CHECK_TO, CHECK_ADDRESS, EVENT_TITLE, PAYMENT_DUE_DATE, DIRECT_PAYMENT_URL } = config;
+const { COVID_POLICY_URL, CHECK_TO, CHECK_ADDRESS, EVENT_TITLE, PAYMENT_DUE_DATE } = config;
 
 // relies on passing order as prop to ensure is updated
 export default function Receipt({ order, person, isPurchaser }) {
@@ -26,7 +26,6 @@ export default function Receipt({ order, person, isPurchaser }) {
       <Typography component='p'>
         Paying on time can increase your chance of being accepted.<br />
         Please send a check for {isDeposit ? `at least $${order.deposit} to hold` : `$${total} to secure`} your spot.<br />
-        (Or you can still pay electronically <StyledLink to={websiteLink(DIRECT_PAYMENT_URL)}>here</StyledLink>.)
       </Typography>
       <Typography component='p' sx={{ mt: 2 }}>
         Make your check out to {CHECK_TO}:<br />
@@ -42,12 +41,6 @@ export default function Receipt({ order, person, isPurchaser }) {
     <Typography component='p' sx={{ mt: 2 }}>
       Thank you for registering for the {EVENT_TITLE}!<br />
       Your payment for ${paid} has been successfully processed.<br />
-      {isDeposit &&
-        <strong>
-          Your balance is due by {PAYMENT_DUE_DATE}.<br />
-          To pay it, please go to <StyledLink to={websiteLink(DIRECT_PAYMENT_URL)}>{DIRECT_PAYMENT_URL}</StyledLink>.
-        </strong>
-      }
     </Typography>
   );
 
