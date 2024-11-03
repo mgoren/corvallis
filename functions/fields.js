@@ -34,5 +34,6 @@ export const validFields = [
   'receipt',
   'additionalPersonReceipt',
   'emailConfirmation',
-  'idempotencyKey'
+  'idempotencyKey',
+  'apartment'
 ];
