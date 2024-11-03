@@ -68,7 +68,7 @@ export const FIELD_CONFIG = {
     defaultValue: '',
     width: 12,
     // width: 4,
-    autoComplete: 'tel'
+    autoComplete: 'tel-national'
   },
   address: {
     label: 'Street address',
@@ -91,14 +91,14 @@ export const FIELD_CONFIG = {
     defaultValue: '',
     width: 6,
     // width: 5,
-    autoComplete: 'city'
+    autoComplete: 'address-level2'
   },
   state: {
     label: 'State / Province',
     validation: Yup.string().required('Please enter state or province.'),
     defaultValue: '',
     width: 3,
-    autoComplete: 'state'
+    autoComplete: 'address-level1'
   },
   zip: {
     label: 'Zip / Postal code',
