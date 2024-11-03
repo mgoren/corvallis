@@ -38,8 +38,8 @@ export const FIELD_CONFIG = {
     width: 12
   },
   nametag: {
-    label: 'Name for button',
-    validation: NAME_VALIDATION.required('Please enter name for roster.'),
+    label: 'First name for button',
+    validation: NAME_VALIDATION.required('Please enter name for button.'),
     defaultValue: '',
     width: 12
   },
